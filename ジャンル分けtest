@@ -107,22 +107,24 @@ Start()
 
 gg.clearResults() 
 gg.toast("█                                            10% ") 
-gg.sleep(300) 
+gg.sleep(1500) 
 gg.toast("███                                     20% ") 
-gg.sleep(300) 
+gg.sleep(1000) 
 gg.toast("█████                              30% ") 
-gg.sleep(300) 
+gg.sleep(3050)
 gg.toast("███████                       40%") 
-gg.sleep(300) 
+gg.sleep(1000)
 gg.toast("██████████            80%") 
-gg.sleep(300) 
+gg.sleep(500)
 gg.toast("████████████     90%") 
-gg.sleep(300) 
+gg.sleep(1000)
 gg.toast("███████████████ 100%")  
 gg.sleep(300)
 gg.alert("スクリプトを終了するときは、必ずEXITを押して終了してください。") 
 gg.alert("二次配布、改造禁止です")
 gg.alert("このジャンル分けスクリプトはテスト版です。")
+gg.sleep(1000)
+gg.alert("テスト版ジャンル分けスクリプトは動作が遅く、機能が制限されています。テスト版ではない方を使用することをおすすめします。")
 function HOME()
   SN = gg.choice({
        "メッキ類",
@@ -136,7 +138,7 @@ function HOME()
        "注意事項",
        "設定",
        " E X I T "
-}, nil,"Car parking Ver.4.8.18.3 test script更新日2024/06/11")
+}, nil,"Car parking Ver.4.8.18.3 script(test)更新日2024/06/11")
  if SN == nil then
     else
     if SN == 1 then
@@ -176,7 +178,6 @@ function HOME()
 PUBGMH = -1
 end
 function FOLDER1()
-gg.alert("できないメッキがあれば報告してください。")
   MN8 = gg.multiChoice({
           "鏡メッキ弱",
           "鏡メッキ強",
@@ -468,23 +469,13 @@ function FOLDER2()
           "高度変更OFF",
           "車を浮かす",
           "車を浮かすOFF",
-          "",
           " E X I T "
 }, nil,"荒らし用")
     if MN8 == nil then
     else
       if MN8[1] == true then
         HACK26()
-gg.clearResults()
-gg.clearList()
-gg.setRanges(gg.REGION_CODE_APP)
-gg.processResume()
-gg.searchNumber("-3.4632364E10;-2.8720048E-14;-1.23898306E-24:24", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.processResume()
-gg.refineNumber("-3.4632364E10;-2.8720048E-14", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(9999, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("-2.74878956E11;-6.13017998E13", gg.TYPE_FLOAT)
-gg.processResume()
+gg.alert("テスト版では実行できません。")
       end
       if MN8[2] == true then
         HACK27()
@@ -507,19 +498,7 @@ gg.toast("✅ON✅")
       end
       if MN8[4] == true then
         HACK29()
-gg.clearResults()
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-Ax = gg.prompt({"足の速さの編集値を入力"},{5},{"number"})
-if not Ax then return end
-
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber(Ax[1],gg.TYPE_DOUBLE)
-gg.getResults(9999)
-gg.editAll("1",gg.TYPE_DOUBLE)
-gg.clearResults()
-gg.toast("✖OFF✖")
+gg.alert("テスト版では実行できません。")
       end
       if MN8[5] == true then
         HACK30()
@@ -727,6 +706,7 @@ function FOLDER3()
     else
       if MN8[1] == true then
         HACK51()
+gg.sleep(5000)
 d = gg.prompt({"HP","Torque","Inner Hp","Inner Torque","Shift Time"},{[1]=""},{[2]=""},{[3]=""},{[4]=""},{[5]=""}) if d == nil then Menu() end gg.clearResults() gg.setVisible(false) 
 gg.setRanges(gg.REGION_CODE_APP) 
 gg.searchNumber('240',gg.TYPE_FLOAT) 
