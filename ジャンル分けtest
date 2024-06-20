@@ -109,7 +109,7 @@ gg.clearResults()
 gg.toast("█                                            10% ") 
 gg.sleep(500) 
 gg.toast("███                                     20% ") 
-gg.sleep(1000) 
+gg.sleep(100) 
 gg.toast("█████                              30% ") 
 gg.sleep(200)
 gg.toast("███████                       40%") 
@@ -2507,6 +2507,7 @@ function FOLDER7()
   MN8 = gg.multiChoice({
           "隔離回避(4.8.18.3では使用できません。)",
           "課金ホイール解放(4.8.18.3では使用できません。)",
+          "バンレスまたはチート部品取り付け",
           " E X I T "
 }, nil,"YOUR HEADING")
     if MN8 == nil then
@@ -2546,6 +2547,60 @@ gg.toast("ON")
       end
       if MN8[3] == true then
         WALL3()
+gg.toast("Script Started")
+
+-- メモリ範囲と種類の設定
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.toast("バンパー1を選択してください")
+gg.sleep(3000)
+gg.searchNumber("0", gg.TYPE_DWORD)
+gg.toast("バンパー2を選択して下さい。")
+gg.sleep(3000)
+gg.refineNumber("1", gg.TYPE_DWORD)
+gg.toast("バンパー3を選択して下さい。")
+gg.sleep(3000)
+gg.refineNumber("2", gg.TYPE_DWORD)
+gg.toast("バンパー4を選択して下さい。")
+gg.sleep(3000)
+gg.refineNumber("3", gg.TYPE_DWORD)
+gg.sleep(2000)
+
+-- リスト表示
+local menu = gg.choice(
+    {'バンパーレス', 'ロールバー', 'ルーフボックス', '鉄板', '自分で入力'},
+    nil,
+    '選択してください'
+)
+
+-- リストから選択されて、実行ボタンが押された後の機能
+local function execute()
+    if menu == 1 then
+        gg.editAll("-1", gg.TYPE_DWORD)
+    elseif menu == 2 then
+        gg.editAll("4", gg.TYPE_DWORD)
+    elseif menu == 3 then
+        gg.editAll("6", gg.TYPE_DWORD)
+    elseif menu == 4 then
+        gg.editAll("21", gg.TYPE_DWORD)
+    elseif menu == 5 then
+        local input = gg.prompt({"数値を入力してください"}, nil, {"number"})
+        if input ~= nil then
+            gg.editAll(input[1], gg.TYPE_DWORD)
+        end
+    end
+    gg.alert("完了")
+end
+
+-- 実行ボタンの表示
+gg.alert("リストから選択後、実行ボタンを押してください")
+local choice = gg.choice({'実行'}, nil, '実行ボタンを押してください')
+
+-- 実行ボタンが押されたら実行
+if choice == 1 then
+    execute()
+end
+
+gg.toast("完了")
       end
       if MN8[4] == true then
         WALL4()
